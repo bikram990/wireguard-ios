@@ -26,5 +26,7 @@
 	<string>Copyright © 2019 WireGuard LLC. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>WireGuardLaunchAtLoginHelper.Application</string>
+	<key>LSBackgroundOnly</key>
+	<true/>
 </dict>
 </plist>
