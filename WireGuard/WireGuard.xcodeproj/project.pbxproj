@@ -150,6 +150,7 @@
 		6FF926BB21F8DF4E00D0B7DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF926BA21F8DF4E00D0B7DC /* AppDelegate.swift */; };
 		6FF926BD21F8DF5400D0B7DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FF926BC21F8DF5400D0B7DC /* Assets.xcassets */; };
 		6FF926C721F8E37500D0B7DC /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF926C621F8E37400D0B7DC /* Application.swift */; };
+		6FF926D321F8F39F00D0B7DC /* WireGuardLaunchAtLoginHelper.app in Embed Helper App */ = {isa = PBXBuildFile; fileRef = 6FF926B821F8DF4E00D0B7DC /* WireGuardLaunchAtLoginHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FFA5D8921942F320001E2F7 /* PacketTunnelSettingsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5D0C472183C6A3000F85AD /* PacketTunnelSettingsGenerator.swift */; };
 		6FFA5D8E2194370D0001E2F7 /* TunnelConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7774E72172020C006A79B3 /* TunnelConfiguration.swift */; };
 		6FFA5D8F2194370D0001E2F7 /* IPAddressRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7774E9217229DB006A79B3 /* IPAddressRange.swift */; };
@@ -192,6 +193,13 @@
 			remoteGlobalIDString = 6FDEF7DD21846BC100D8FBF6;
 			remoteInfo = WireGuardGoBridge;
 		};
+		6FF926CE21F8F2B400D0B7DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FF4AC0C211EC46F002C96EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FF926B721F8DF4E00D0B7DC;
+			remoteInfo = WireGuardLaunchAtLoginHelper;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -215,6 +223,17 @@
 				6FB1BD9921D4BFE700A991BF /* WireGuardNetworkExtensionmacOS.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF926D221F8F35400D0B7DC /* Embed Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				6FF926D321F8F39F00D0B7DC /* WireGuardLaunchAtLoginHelper.app in Embed Helper App */,
+			);
+			name = "Embed Helper App";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -736,10 +755,12 @@
 				6FB1BD5A21D2607A00A991BF /* Frameworks */,
 				6FB1BD5B21D2607A00A991BF /* Resources */,
 				6FB1BD9D21D4BFE700A991BF /* Embed App Extensions */,
+				6FF926D221F8F35400D0B7DC /* Embed Helper App */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6FF926CF21F8F2B400D0B7DC /* PBXTargetDependency */,
 				6FB1BD9821D4BFE700A991BF /* PBXTargetDependency */,
 			);
 			name = WireGuardmacOS;
@@ -1318,6 +1339,11 @@
 			target = 6FDEF7DD21846BC100D8FBF6 /* WireGuardGoBridgeiOS */;
 			targetProxy = 6FDEF7E121846C0000D8FBF6 /* PBXContainerItemProxy */;
 		};
+		6FF926CF21F8F2B400D0B7DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FF926B721F8DF4E00D0B7DC /* WireGuardLaunchAtLoginHelper */;
+			targetProxy = 6FF926CE21F8F2B400D0B7DC /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1666,6 +1692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_ID_MACOS).launch-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -1685,6 +1712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_ID_MACOS).launch-helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -28,5 +28,7 @@
 	<string>WireGuardLaunchAtLoginHelper.Application</string>
 	<key>LSBackgroundOnly</key>
 	<true/>
+    <key>com.wireguard.macos.app_id</key>
+    <string>$(APP_ID_MACOS)</string>
 </dict>
 </plist>
